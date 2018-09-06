@@ -1,7 +1,7 @@
 # compact-list
 
 [![Hackage](https://img.shields.io/hackage/v/compact-list.svg?style=flat)](https://hackage.haskell.org/package/compact-list)
-[![Build Status](https://travis-ci.org/harendra-kumar/compact-list.svg?branch=master)](https://travis-ci.org/harendra-kumar/compact-list)
+[![Build Status](https://travis-ci.org/composewell/compact-list.svg?branch=master)](https://travis-ci.org/composewell/compact-list)
 [![Windows Build status](https://ci.appveyor.com/api/projects/status/sndov45axamjt6bu?svg=true)](https://ci.appveyor.com/project/harendra-kumar/compact-list)
 
 If you hold on to a large data structure in garbage collected (GC) memory
