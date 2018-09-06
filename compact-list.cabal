@@ -1,0 +1,51 @@
+name:               compact-list
+version:            0.1.0
+synopsis:           An append only list in a compact region
+description:
+ If you hold on to a large data structure in garbage collected (GC) memory
+ for relatively longer times it puts undue pressure on GC, unnecessarily
+ increasing the work done by GC and also increasing the duration of GC
+ pauses. A 'CompactList' allows you to keep a large list in a Compact Region
+ not touched by GC, thus avoiding any GC overhead.  This is essentially like
+ a convenient in-memory append only file where you can write a list of
+ Haskell values without having to marshall or serialize them.
+
+homepage:            https://github.com/composewell/compact-list
+bug-reports:         https://github.com/composewell/compact-list/issues
+license:             BSD3
+license-file:        LICENSE
+tested-with:         GHC==8.2.2, GHC==8.4.3
+author:              Harendra Kumar
+maintainer:          harendra.kumar@gmail.com
+copyright:           2018 Harendra Kumar
+category:            Data
+stability:           Experimental
+build-type:          Simple
+cabal-version:       >= 1.10
+
+extra-source-files:
+    Changelog.md
+    README.md
+    stack.yaml
+
+source-repository head
+    type: git
+    location: https://github.com/composewell/compact-list
+
+library
+    hs-source-dirs:    src
+    exposed-modules:   Data.CompactList
+    default-language: Haskell2010
+    ghc-options: -Wall
+    build-depends: base      >= 4.8   && < 5
+                 , ghc-prim  >= 0.2   && < 0.6
+
+test-suite test
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is: Main.hs
+  build-depends:
+      compact-list
+    , base >= 4.8   && < 5
+  default-language: Haskell2010
+  ghc-options: -Wall -with-rtsopts "-s"
